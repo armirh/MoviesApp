@@ -1,0 +1,81 @@
+﻿@model Movies.Models.ViewModels.MoviesListVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<div class="breadcrumb-area bg-img bg-overlay" style="background-image: url(/images/@Model.Genre.ImagePath);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <!-- Breadcrumb Text -->
+            <div class="col-12">
+                <div class="breadcrumb-text">
+                    <h2>@Model.Genre.Title - Movie</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <section class="game-review-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                @if (Model.Movies.Any())
+                {<table class="table table-borderless " id="movies"><thead><tr><th></th></tr></thead><tbody>
+    @foreach (var movie in Model.Movies)
+    {
+        <tr class="table-borderless">
+            <td>
+                <div class="col-12" >
+
+                    <!-- *** Single Review Area *** -->
+                    <div class="single-game-review-area d-flex flex-wrap mb-30">
+                        <div class="game-thumbnail">
+                            <img src="/images/@movie.ImagePath" alt="">
+                        </div>
+                        <div class="game-content">
+                            <span class="game-tag">@movie.Genre.Title</span>
+                            <a href="single-game-review.html" class="game-title">@movie.Title</a>
+                            <div class="game-meta">
+                                <a href="#" class="game-date">@movie.Year</a>
+                                <a href="#" class="game-comments">@movie.Duration min</a>
+                            </div>
+                            <p>Cast: <b>@movie.Actors</b></p>
+                            <p>Director: <b>@movie.Director</b></p>
+                            <!-- Download & Rating Area -->
+                            <div class="download-rating-area d-flex align-items-center justify-content-between">
+                                <div class="download-area">
+                                    <p>Price: $@movie.Price</p>
+
+                                    <a href="#"><img src="img/core-img/app-store.png" alt=""></a>
+                                    <a asp-controller="Order" class="btn btn-info" asp-action="Create" asp-route-id="@movie.Id">Buy Now</a>
+                                </div>
+                                <div class="rating-area text-center">
+                                    <h3>@movie.Rating</h3>
+                                    <div class="stars">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </td>
+        </tr>
+    }
+</tbody>
+</table>
+                }
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,51 @@
+﻿@model Movies.Models.ViewModels.GenreVM
+@{
+    var title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if(Model.Genre.Id!=0) { title = "Edit"; }
+
+<section class="contact-area section-padding-50">
+    <div class="container">
+        <hr />
+        <h1>Genre</h1><hr />
+        <div class="row">                   
+            <div class="col-12">
+                <h4 class="mb-70">@title Genre</h4>              
+                <div class="contact-form-area mb-100">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <form asp-action="Upsert" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <input type="text" class="form-control" asp-for="Genre.Title" id="name" placeholder="Title*">
+                            </div>
+                            @if (Model.Genre.Id == 0)
+                            { <div class="col-12 col-lg-6">
+                                Image
+                                <input asp-for="File" type="file" name="file" />
+                            </div>
+                            }   
+                            </div><div class="row">
+                        <div class="col-12 col-lg-4">
+                            @if (Model.Genre.Id != 0)
+                            {<button class="btn egames-btn w-100" type="submit">Update</button>}
+                            else
+                            {
+                                <button class="btn egames-btn w-100" type="submit">Create</button>
+                            }
+                        </div>
+                            <div class="col-12 col-lg-4">
+                             
+                                <a href='javascript:history.go(-1)' class="btn egames-btn w-100 btn btn-lg btn-danger">Back</a>
+                            </div>
+                        </div>
+</form>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+

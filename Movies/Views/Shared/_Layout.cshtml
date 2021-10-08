@@ -1,0 +1,271 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MoviesApp</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />*@
+    <link rel="stylesheet" href="~/css/style.css">
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+</head>
+<body>
+    @*<header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Movies</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" />
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>*@
+    <header class="header-area wow fadeInDown" data-wow-delay="500ms">
+        <!-- Top Header Area -->
+        <!-- <div class="top-header-area">
+             <div class="container h-100">
+                 <div class="row h-100 align-items-center">
+                     <div class="col-12 d-flex align-items-center justify-content-between">
+                         <!-- Logo Area -->
+        <!-- <div class="logo">
+             <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+         </div>
+
+         <!-- Search & Login Area -->
+        <!-- <div class="search-login-area d-flex align-items-center">
+                            <!-- Top Search Area --
+                            <div class="top-search-area">
+                                <form action="#" method="post">
+                                    <input type="search" name="top-search" id="topSearch" placeholder="Search">
+                                    <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <!-- Login Area --
+                            <div class="login-area">
+                                <a href="#"><span>Login / Register</span> <i class="fa fa-lock" aria-hidden="true"></i></a>
+                            </div>
+                        </div>--
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Navbar Area -->
+        <div class="egames-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="egamesNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+                        <div class="logo">
+                            <a asp-controller="Home" asp-action="Index"><img src="~/images/logoo.png" alt=""></a>
+                        </div>
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            <a href="#">Settings(Admin)</a>
+                                            <ul class="dropdown">
+
+                                                <li><a asp-controller="Genre" asp-action="GenreList">Genre</a></li>
+                                                <li><a asp-controller="Movie" asp-action="MovieList">Movies</a></li>
+                                                <li><a asp-controller="Order" asp-action="Index">Orders</a></li>
+                                                <li><a asp-controller="User" asp-action="Index">Users</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                    <li>
+                                        <a asp-controller="Genre" asp-action="Index">Genre</a>
+
+                                    </li>
+                                    @if (User.IsInRole("User"))
+                                    {
+                                        <li>
+                                            <a href="#">User</a>
+                                            <ul class="dropdown">
+
+
+                                                <li><a asp-controller="Order" asp-action="UserOrder">My Orders</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+
+
+                                    <li><partial name="_LoginPartial" /></li>
+                                </ul>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer-area">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area section-padding-100-0">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-70">
+                            <div class="widget-title">
+                                <a href="index.html"><img src="/images/logoo2.png" alt=""></a>
+                            </div>
+                            <div class="widget-content">
+                                <p>Here you will find best movies collection in best quality</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-70">
+                            <div class="widget-title">
+                                <h4>Movie Reviews</h4>
+                            </div>
+                            <div class="widget-content">
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">GreyHound</a></li>
+                                        <li><a href="#">Tenet</a></li>
+                                        <li><a href="#">Wonder Woman</a></li>
+                                        <li><a href="#">Black Widow</a></li>
+                                        <li><a href="#">Big 6</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-70">
+                            <div class="widget-title">
+                                <h4> Links</h4>
+                            </div>
+                            <div class="widget-content">
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Rotten Tometoes</a></li>
+                                        <li><a href="#">Reviews</a></li>
+                                        <li><a href="#">New Movies</a></li>
+                                        <li><a href="#">Forum</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-70">
+                            <div class="widget-title">
+                                <h4>What’s new</h4>
+                            </div>
+                            <div class="widget-content">
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Doom</a></li>
+                                        <li><a href="#">James Bond</a></li>
+                                        <li><a href="#">Bloodborne</a></li>
+                                        <li><a href="#">God of war</a></li>
+                                        <li><a href="#">Persona </a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-content">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 col-sm-5">
+                        <!-- Copywrite Text -->
+                        <p class="copywrite-text">
+
+
+                            Copyright &copy;
+
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2020 - Movies - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/lib/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/lib/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="~/lib/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="~/js/active.js"></script>
+    <!--------------Data Tables-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/e19c476714.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

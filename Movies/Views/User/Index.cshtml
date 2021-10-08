@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<div class="container">
+    <hr />
+    <h1>Order List</h1>
+    @*<a asp-controller="Movie" class="btn btn-info float-right m-3" asp-action="Upsert">Create New</a>*@
+    <hr />
+    <table id="users" class=" table table-bordered" width="100%">
+        <thead>
+            <tr>
+                <th>First Name</th>
+
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+
+                <th>Address</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 0)
+            {
+                foreach (var user in Model)
+                {
+            <tr>
+
+               
+                <td>@user.Fname</td>
+                <td>@user.Lname</td>
+                <td>@user.Email</td>
+                <td>@user.Phone</td>
+                <td>@user.Address</td>
+
+                
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+

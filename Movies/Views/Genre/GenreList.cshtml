@@ -1,0 +1,46 @@
+﻿@model Movies.Models.ViewModels.GenreListVM
+@{
+    ViewData["Title"] = "GenreList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<div class="container">
+    <hr />
+    <h1>GenreList</h1> 
+    <a  asp-controller="Genre" class="btn btn-info float-right m-3" asp-action="Upsert" ><i class='fas fa-plus'></i>Create New</a>
+    <hr />
+    <table id="genres" class=" table table-bordered" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Movies</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Genres.Any())
+            {
+                foreach (var gen in Model.Genres)
+                {
+                    <tr>
+                        <td><img style="width:100px;height:100px" src="/images/@gen.ImagePath" /></td>
+                        <td>@gen.Title</td>
+                        <td>@gen.Movies.Count()</td>
+                        <td>
+                            <a asp-controller="Genre"
+                               asp-action="Upsert"
+                               asp-route-id="@gen.Id"
+                               class='btn btn-success text-white' style='cursor:pointer; width:100px;'><i class='far fa-edit'></i>Edit</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+

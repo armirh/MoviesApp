@@ -1,0 +1,18 @@
+E:\Fiverr 2020\October\Movies\Movies.Models\bin\Debug\netcoreapp3.1\Movies.Models.deps.json
+E:\Fiverr 2020\October\Movies\Movies.Models\bin\Debug\netcoreapp3.1\Movies.Models.dll
+E:\Fiverr 2020\October\Movies\Movies.Models\bin\Debug\netcoreapp3.1\Movies.Models.pdb
+E:\Fiverr 2020\October\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.AssemblyInfoInputs.cache
+E:\Fiverr 2020\October\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.AssemblyInfo.cs
+E:\Fiverr 2020\October\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.csproj.CoreCompileInputs.cache
+E:\Fiverr 2020\October\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.dll
+E:\Fiverr 2020\October\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.pdb
+E:\Fiverr 2020\October\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.csprojAssemblyReference.cache
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\bin\Debug\netcoreapp3.1\Movies.Models.deps.json
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\bin\Debug\netcoreapp3.1\Movies.Models.dll
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\bin\Debug\netcoreapp3.1\Movies.Models.pdb
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.csprojAssemblyReference.cache
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.AssemblyInfoInputs.cache
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.AssemblyInfo.cs
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.csproj.CoreCompileInputs.cache
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.dll
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Models\obj\Debug\netcoreapp3.1\Movies.Models.pdb

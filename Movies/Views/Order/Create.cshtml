@@ -1,0 +1,75 @@
+﻿@model Movies.Models.ViewModels.OrderVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="post-news-area section-padding-0-100">
+    <div class="container">
+        <hr />
+        <h3 class="text-center" >Check Out</h3><hr />
+        <div class="row justify-content-center">
+            <!-- Post Details Content Area -->
+
+            <div class="col-12 col-lg-8">
+                <div class="mt-20">
+                    <div class="post-details-content mb-50">
+                        <div class="blog-thumbnail mb-50">
+                            <img src="/images/@Model.Movie.ImagePath" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="post-title">@Model.Movie.Title</h4>
+                            <div class="post-meta mb-30">
+                                <a href="#" class="post-date">Release: @Model.Movie.Year</a>
+                                <a href="#" class="post-author">Director:@Model.Movie.Director</a>
+                                <a href="#" class="post-comments">Duration: @Model.Movie.Duration Min</a>
+                                <a href="#" class="post-comments">Genre: @Model.Movie.Genre.Title</a>
+                            </div>
+                            <p>
+                                @Model.Movie.Actors
+                            </p>
+
+
+
+                        </div>
+                    </div>
+
+                    <!-- Comment Area Start -->
+
+
+                    <div class="post-a-comment-area mb-30 clearfix" id="reply">
+                        <h4 class="mb-50">Check Out</h4>
+
+                        <!-- Reply Form -->
+                        <div class="contact-form-area">
+                            <form action="Create" method="post">
+                                <input asp-for="Order.MovieId" type="hidden" />
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        Tax <input type="text" value="@Model.Tax" class="form-control" id="name" readonly>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        Total Amount <input asp-for="Order.Amount" readonly class="form-control">
+                                    </div>
+                                    @* <div class="col-12">
+                                        <input type="text" class="form-control" id="subject" placeholder="Website">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    </div>*@
+                                    <div class="col-12">
+                                        <button class="btn egames-btn w-100" type="submit">Place Order</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Widget -->
+
+        </div>
+    </div>
+</section>
+

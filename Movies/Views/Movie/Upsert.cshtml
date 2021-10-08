@@ -1,0 +1,95 @@
+﻿@model Movies.Models.ViewModels.NewMovieVM
+@{
+    var title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if(Model.Movie.Id!=0)
+{
+    title = "Edit";
+}
+
+<section class="contact-area section-padding-50">
+    <div class="container">
+        <hr /> <h4 class="mb-20">@title Movie</h4><hr />
+        <div class="row">
+
+
+            <div class="col-12">
+
+
+                <!-- Contact Form -->
+                <div class="contact-form-area mb-100">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <form asp-action="Upsert" method="post" enctype="multipart/form-data">
+                        @if (Model.Movie.Id != 0)
+                        {
+                            <input type="hidden" asp-for="Movie.Id" />
+                            // title = "Edit Micro Sample";
+                        }
+                        @*<input type="hidden" asp-for="Movie.GenreId" />*@
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <input type="text" class="form-control" asp-for="Movie.Title" placeholder="Title*">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                @Html.DropDownListFor(m => m.Movie.GenreId, Model.GetGenres,
+                     "- Please select a genre-", new { @class = "form-control" })
+                                <span asp-validation-for="Movie.GenreId" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                Year<input class="form-control" asp-for="Movie.Year" placeholder="Year*">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                Duration(Min) <input type="text" class="form-control" asp-for="Movie.Duration" id="name" placeholder="Duration*">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                Rating <input type="text" class="form-control" asp-for="Movie.Rating" id="name" placeholder="Rating*">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                Director <input type="text" class="form-control" asp-for="Movie.Director" id="name" placeholder="Director*">
+                            </div>
+                            <div class="col-12">
+                                <textarea asp-for="Movie.Actors" class="form-control" cols="30" rows="3" placeholder="Actors*"></textarea>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                Price  <input type="text" class="form-control" asp-for="Movie.Price" id="name" placeholder="Price*">
+                            </div>
+                            @if (Model.Movie.Id == 0)
+                            {<div class="col-12 col-lg-6">
+                                    Image<br />
+                                    <input asp-for="File" type="file" name="file" />
+                                </div>
+                            }
+                            @*<div class="col-12 col-lg-6">
+                                <input type="email" class="form-control" id="email" placeholder="Email*">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            </div>*@
+                            @*<div class="col-12">
+                                <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                            </div>*@
+    </div><div class="row">
+                            <div class="col-12 col-lg-4">
+                                @if (Model.Movie.Id != 0)
+                                {<button class="btn egames-btn w-100" type="submit">Update</button>}
+                                else
+                                {
+                                    <button class="btn egames-btn w-100" type="submit">Create</button>
+                                }
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                @*<a asp-action="Index" asp- class="btn btn-success form-control">Back to List</a>*@
+                                <a href='javascript:history.go(-1)' class="btn egames-btn w-100 btn btn-lg btn-danger">Back</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+

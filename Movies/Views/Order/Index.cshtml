@@ -1,0 +1,55 @@
+﻿@model Movies.Models.ViewModels.OrderListVM
+@{
+    ViewData["Title"] = "Order List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<div class="container">
+    <hr />
+    <h1>Order List</h1>
+    @*<a asp-controller="Movie" class="btn btn-info float-right m-3" asp-action="Upsert">Create New</a>*@
+    <hr />
+    <table class=" table table-bordered" id="orders" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+               
+                <th>Title</th>
+                <th>Buyer</th>
+                <th>Amount</th>
+                
+                <th>Created</th>
+                @*<th></th>*@
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Orders.Any())
+            {
+                foreach (var ord in Model.Orders)
+                {
+                    <tr>
+                        <td><img style="width:100px;height:70px" src="/images/@ord.Movie.ImagePath" /></td>
+                        @*<td>@ord.Genre</td>*@
+                        <td>@ord.Movie.Title</td>
+                        <td>@ord.User.Email</td>
+                        <td>$@ord.Amount</td>
+                        <td>@ord.Created</td>
+                       
+                        @*<td>
+                            <a asp-controller="Movie"
+                               asp-action="Upsert"
+                               asp-route-id="@ord.Id"
+                               class='btn btn-success text-white' style='cursor:pointer; width:100px;'><i class='far fa-edit'></i>Edit</a>
+                        </td>*@
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+
+

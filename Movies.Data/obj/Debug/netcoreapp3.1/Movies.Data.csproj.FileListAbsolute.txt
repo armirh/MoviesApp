@@ -1,0 +1,24 @@
+E:\Fiverr 2020\October\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Data.deps.json
+E:\Fiverr 2020\October\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Data.dll
+E:\Fiverr 2020\October\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Data.pdb
+E:\Fiverr 2020\October\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Models.dll
+E:\Fiverr 2020\October\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Models.pdb
+E:\Fiverr 2020\October\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.csprojAssemblyReference.cache
+E:\Fiverr 2020\October\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.AssemblyInfoInputs.cache
+E:\Fiverr 2020\October\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.AssemblyInfo.cs
+E:\Fiverr 2020\October\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.csproj.CoreCompileInputs.cache
+E:\Fiverr 2020\October\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.csproj.CopyComplete
+E:\Fiverr 2020\October\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.dll
+E:\Fiverr 2020\October\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.pdb
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Data.deps.json
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Data.dll
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Data.pdb
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Models.dll
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\bin\Debug\netcoreapp3.1\Movies.Models.pdb
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.csprojAssemblyReference.cache
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.AssemblyInfoInputs.cache
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.AssemblyInfo.cs
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.csproj.CoreCompileInputs.cache
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.csproj.CopyComplete
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.dll
+C:\Users\miri-\OneDrive\Desktop\FIRST SEMSTER\SOFTWARE ENGEERING I\MID TERM PROJECT\Movies\Movies.Data\obj\Debug\netcoreapp3.1\Movies.Data.pdb
